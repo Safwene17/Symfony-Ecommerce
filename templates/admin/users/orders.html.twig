@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'adminOrders.title'|trans }}{% endblock %}
+
+{% block body %}
+    <h1 class="text-white">{{ 'adminOrders.title'|trans }}</h1>
+    <hr class="hr" />
+    <div class="d-flex gap-3 flex-column">
+        {% include "_components/adminnav.html.twig" %}
+        <div class="bg-body-tertiary p-1 rounded w-100">
+            <table class="table m-0 table-striped align-middle">
+                <thead>
+                    <tr>
+                        <th>{{'adminOrders.orderDate'|trans}}</th>
+                        <th>{{'adminOrders.buyer'|trans}}</th>
+                        <th>{{'adminOrders.product'|trans}}</th>
+                        <th>{{'adminOrders.quantity'|trans}}</th>
+                        <th>Total</th>
+                        <th>Reference</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {# Loop through orders instead of users #}
+                    {% for order in orders %}
+                        <tr>
+                            {% for detail in order.orderDetails %}
+                                <tr>
+                                    <td>{{ order.createdAt|date('d/m/Y H:i') }}</td>
+                                    <td>{{ order.user.email }}</td>
+                                    <td>{{ detail.product.name }}</td>
+                                    <td>{{ detail.quantity }}</td>
+                                    <td>₹{{ detail.price * detail.quantity }}</td>
+                                    <td>{{ order.orderTag }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
