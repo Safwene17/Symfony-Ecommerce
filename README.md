@@ -14,7 +14,7 @@ Project made by Rayan IDRI <br>
 
 ![image](https://github.com/RaynarIdori/Symfony-Ecommerce/assets/152623309/c0a2e7a1-81d8-4bb8-a9f4-8ceb7f92bfd2)
 <hr>
-<h3>Specific product view/h3>
+<h3>Specific product view</h3>
 
 ![image](https://github.com/RaynarIdori/Symfony-Ecommerce/assets/152623309/64886491-aeca-4ae1-9633-504a2b7b2832)
 <hr>
