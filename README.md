@@ -2,8 +2,21 @@ Project made by Rayan IDRI <br>
 (https://github.com/Idraynar) <br>
 (https://github.com/RaynarIdori) 
 <hr>
-<h1>Create a '.env.local' and that's it :) </h1>
-DATABASE_URL="mysql://<b>[username]</b>:<b>[password]</b>@127.0.0.1:8889//<b>[table_name]</b>?serverVersion=8.0.32&charset=utf8mb4"
+- After cloning the repo, run :
+
+    composer install
+<br>
+- Create '.env.local' file and put this in it :
+
+    DATABASE_URL="mysql://[username]:[password]@127.0.0.1:8889/[table_name]?serverVersion=8.0.32&charset=utf8mb4"
+<br>
+- Create the database, make your migrations, migrate.
+<br><br>
+- Generate data from DataFixtures using this command :
+
+    php bin/console d:f:l --no-interaction
+<br>
+- Launch your server and that's it, normally everything work well :)
 <hr>
 <h3>Categories list</h3>
 
