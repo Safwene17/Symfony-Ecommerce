@@ -3,6 +3,7 @@ Project made by Rayan IDRI <br>
 (https://github.com/RaynarIdori) 
 <hr>
 <h1>Create a '.env.local' and that's it :) </h1>
+DATABASE_URL="mysql://<b>[username]</b>:<b>[password]</b>@127.0.0.1:8889//<b>[table_name]</b>?serverVersion=8.0.32&charset=utf8mb4"
 <hr>
 <h3>Categories list</h3>
 
