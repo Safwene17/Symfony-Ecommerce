@@ -2,6 +2,8 @@ Project made by Rayan IDRI <br>
 (https://github.com/Idraynar) <br>
 (https://github.com/RaynarIdori) 
 <hr>
+<h1>Create a '.env.local' and that's it :) </h1>
+<hr>
 <h3>Categories list</h3>
 
 ![image](https://github.com/RaynarIdori/Symfony-Ecommerce/assets/152623309/75205e22-f498-4001-91c2-edbefb951c79)
