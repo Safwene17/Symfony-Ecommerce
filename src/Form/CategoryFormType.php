@@ -15,10 +15,10 @@ class CategoryFormType extends AbstractType
         $builder
             ->add('name')
             ->add('categoryOrder')
-            ->add('parent', EntityType::class, [
-                'class' => Category::class,
-                'choice_label' => 'name',
-            ])
+            // ->add('parent', EntityType::class, [
+            //     'class' => Category::class,
+            //     'choice_label' => 'name',
+            // ])
         ;
     }
 
