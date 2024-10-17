@@ -52,4 +52,45 @@ class CategoryController extends AbstractController
             'categoryForm' => $categoryForm,
         ]);
     }
+
+
+    #[Route('/edit/{id}', name: 'edit')]
+    public function edit(Category $category, Request $request, EntityManagerInterface $em, SluggerInterface $slugger): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+        $categoryForm = $this->createForm(CategoryFormType::class, $category);
+
+        $categoryForm->handleRequest($request);
+
+        if ($categoryForm->isSubmitted() && $categoryForm->isValid()) {
+            $slug = $slugger->slug($category->getName());
+            $category->setSlug($slug);
+
+            $em->flush();
+
+            $this->addFlash('success', 'Category updated successfully!');
+            return $this->redirectToRoute('admin_category_index');
+        }
+
+        return $this->render('admin/category/edit.html.twig', [
+            'categoryForm' => $categoryForm,
+            'category' => $category,
+        ]);
+    }
+
+
+    #[Route('/delete/{id}', name: 'delete')]
+    public function delete( Category $category, EntityManagerInterface $em): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+            $em->remove($category);
+            $em->flush();
+
+            $this->addFlash('success', 'Category deleted successfully!');
+        
+
+        return $this->redirectToRoute('admin_category_index');
+    }
 }

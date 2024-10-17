@@ -16,7 +16,7 @@
 
                         <th>Slug</th>
                         <th>{{'adminCategoryIndex.order'|trans}}</th>
-                        
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,6 +27,12 @@
 
                         <td>{{ category.slug }}</td>
                         <td>{{ category.CategoryOrder }}</td>
+                        <td>
+                            <a class="btn btn-outline-primary" href="{{ path('admin_category_edit', {id: category.id}) }}">{{'adminProductsIndex.update'|trans}}</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-outline-danger" href="{{ path('admin_category_delete', {id: category.id}) }}" onclick="return confirm('Are you sure?')">{{'adminProductsIndex.delete'|trans}}</a>
+                        </td>
                     </tr>
                 {% endfor %}
                 </tbody>
